@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_tiny_ternary_tapeout #(
+module tt_um_tiny_ternary_tapeout_csa #(
   parameter MAX_IN_LEN  = 12,
   parameter MAX_OUT_LEN = 12
 ) (
@@ -91,4 +91,4 @@ module tt_um_tiny_ternary_tapeout #(
 
   assign {uo_out, uio_out[3:0]} = uo_output;
 
-endmodule : tt_um_tiny_ternary_tapeout
+endmodule : tt_um_tiny_ternary_tapeout_csa

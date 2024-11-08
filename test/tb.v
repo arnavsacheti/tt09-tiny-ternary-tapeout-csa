@@ -27,7 +27,7 @@ module tb ();
   wire VGND = 1'b0;
 `endif
 
-  tt_um_tiny_ternary_tapeout tt_um_t3_inst (
+  tt_um_tiny_ternary_tapeout_csa tt_um_t3_inst (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST

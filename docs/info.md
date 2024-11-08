@@ -8,7 +8,7 @@ The key insight of this research is to leverage alternative mathematical structu
 
 ## How it works
 
-The `tt_um_tiny_ternary_tapeout.v` module is designed to perform matrix multiplication using a pipelined architecture. Here's a step-by-step explanation of how it works:
+The `tt_um_tiny_ternary_tapeout_csa.v` module is designed to perform matrix multiplication using a pipelined architecture. Here's a step-by-step explanation of how it works:
 
 Loading the Weights (`tt_um_load.v`):
 
@@ -28,7 +28,7 @@ Pipelined Architecture:
 Outputting Results:
 
 > After driving all the inputs, the outputs are produced as 8-bit integers. These outputs represent the result of the matrix multiplication operation.
-By leveraging a pipelined architecture, the tt_um_mult.v module ensures efficient and continuous data processing, allowing for high-throughput matrix multiplication operations.
+> By leveraging a pipelined architecture, the tt_um_mult.v module ensures efficient and continuous data processing, allowing for high-throughput matrix multiplication operations.
 
 ### Example: Using a Ternary Array for Efficient Computation
 
@@ -67,19 +67,21 @@ For each column in the ternary array:
 Let’s compute each column separately:
 
 - **Column 1 Calculation:**
+
   - Row 1: \( +1 \times 2 = 2 \)
   - Row 2: \( -1 \times -1 = +1 \)
   - Row 3: \( 0 \times 3 = 0 \)
   - Row 4: \( +1 \times 0 = 0 \)
-  
+
   Sum of Column 1: \( 2 + 1 + 0 + 0 = 3 \)
 
 - **Column 2 Calculation:**
+
   - Row 1: \( 0 \times 2 = 0 \)
   - Row 2: \( +1 \times -1 = -1 \)
   - Row 3: \( -1 \times 3 = -3 \)
   - Row 4: \( +1 \times 0 = 0 \)
-  
+
   Sum of Column 2: \( 0 - 1 - 3 + 0 = -4 \)
 
 #### Final Output Vector
